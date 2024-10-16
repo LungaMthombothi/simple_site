@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  perspective: 1000px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.name {
+  font-size: 3rem;
+  color: #333;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.name:hover {
+	transform: rotateX(20deg) rotateY(20deg) rotateZ(20deg);
+}
+.name:active {
+  animation: spin3d  2s infinite linear;
+}
+#name-element {
+	transform-style: preserve-3d;
+	perspective: 800px;
+	animation: idle-rotation 10s infinite alternate ease-in-out;
+}
+@keyframes spin3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
